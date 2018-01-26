@@ -56,9 +56,13 @@ def triangle_right_justified(r):
     """
 
     for j in range(r):
-        print(j + 1)
-        for k in range(j+1):
-            print('x',end='')
+        for k in range(r-j):
+            print(' ',end='')
+        for n in range(j+1):
+            print(n+1,end='')
+        print()
+
+
 
 
     # ------------------------------------------------------------------
@@ -117,8 +121,11 @@ def triangle_upside_down(r):
     """
 
     for j in range(r):
+        for n in range(j):
+            print(' ', end='')
         for k in range(r-j):
             print(k+1,end= '')
+
         print()
 
     # ------------------------------------------------------------------
@@ -173,10 +180,20 @@ def vee(r):
     For purposes of "lining up", assume r is a single digit.
     """
 
+
     for j in range(r):
-        for k in range(r-j):
-            print(k+1,end= '')
-        print('-')
+        for n in range(j):
+            print(' ', end='')
+        for k in range(r - j):
+            print(k + 1, end='')
+        print('-',end='')
+        for n in range(r-j):
+            print(r-j-n,end='')
+        for k in range(j):
+            print(' ',end='')
+        print()
+
+
 
 
     # ------------------------------------------------------------------
@@ -236,10 +253,12 @@ def numbers_constant_forward(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
 
-    for j in range (maxnum):
-        for k in range (n):
-            print(j+1, end= '')
-        print(' ')
+    for l in range (r):
+        for j in range (maxnum):
+            for k in range (n):
+                print(j+1, end='')
+            print(' ',end='')
+        print()
 
 
     # ------------------------------------------------------------------
@@ -287,10 +306,13 @@ def numbers_constant_backwards(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
 
-    for j in range (maxnum):
-        for k in range (n):
-            print(maxnum-j, end= '')
-        print(' ')
+    for l in range (r):
+        for j in range (maxnum):
+            for k in range (n):
+                print(maxnum-j, end= '')
+            print(' ',end='')
+
+        print()
 
     # ------------------------------------------------------------------
     # TODO: 6. Implement and test this function.
@@ -346,9 +368,12 @@ def numbers_increasing_forward(r, maxnum):
     """
 
     for j in range (r):
-        for k in range (maxnum):
-            print(k*j, end= '')
-        print(' ')
+        for k in range (maxnum+1):
+            for n in range (k):
+                print(k,end='')
+            print(' ',end='')
+        print()
+
 
     # ------------------------------------------------------------------
     # TODO: 7. Implement and test this function.
